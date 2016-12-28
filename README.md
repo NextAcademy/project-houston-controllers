@@ -36,6 +36,7 @@ Once lirc is running the the fun part starts. Since I already got the signal fro
 The codes for Arduino Receiver are inside of Arduino folder.
 
 And then copy the row and paste it in AnalysisIR and convert it to lircd.conf file, which can be found in Air_Conditioner_LIRC_Files and the filename is etc_lirc_lircd.
+
 After that, gpio pins should be specified in two files, boot/config.txt and /etc/modules-load.d/lirc_rpi.conf. For most of the tutorials they use /etc/modules file, but apparently in this case it was not reading the file, so had to safe it this way. This two files can be found in Air_Conditioner_LIRC_Files folder as well.
 Then there is one more file that needs to be specified is /etc/lirc/hardware.conf, which contanst all the settings we need to run the irsend command.
 
@@ -53,4 +54,8 @@ sudo sudo apt-get install apache2 -y
 ```
 Once installation is done, the default page can be accessed using the ip adrress of the pi or http://localhost/
 
+In order to run the irsend command over web and get the state of it using light sensor, which will indicate whether the aircon is on or off, two python scripts were created, which can be found inside of the Apache folder. 
 
+Well, for now that's it. 
+
+Later add more info. :D
